@@ -1,0 +1,29 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit the User</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+
+        <nav>
+
+            <a href="/read">Read Users</a>
+
+        </nav>
+
+        <h1>Update User</h1>
+
+        <form action="/update/<%= user._id %>" method="post">
+
+            <input type="text" placeholder="Enter Your Name" name="name" value="<%= user.username %>" >
+            <input type="text" placeholder="Enter Your Email" name="email" value="<%= user.useremail %>" >
+            <input type="text" placeholder="Enter Your Image URL" name="imgurl" value="<%= user.imgurl %>">
+            <input type="submit" value="Update User">
+
+        </form>
+
+    </body>
+    </html>

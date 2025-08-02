@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Users</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <a href="/">Back To Home</a>
+
+    <h1>All Users</h1>
+
+    <div class="user">
+
+        <% if(users.length > 0){ %>
+
+            <% users.forEach((user)=> { %>
+            <div class="user-card">
+                <div id="img">
+                    <img src="<%= user.imgurl %>" alt="User Image" />
+                </div>
+                <h3>
+                    <%= user.username %>
+                </h3>
+                <h5>
+                    <%= user.useremail %>
+                </h5>
+
+                <a href="/edit/<%= user._id %>">Edit User</a>
+                <a href="/delete/<%= user._id %>">Delete User</a>
+            </div>
+            <% }); %>
+
+        <% } else { %>
+
+            <h1>No User Yet</h1>
+
+        <% }; %>
+
+
+    </div>
+
+</body>
+
+</html>
